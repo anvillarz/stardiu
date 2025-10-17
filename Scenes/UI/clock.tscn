@@ -1,0 +1,148 @@
+[gd_scene load_steps=10 format=3 uid="uid://beiau533kkjj2"]
+
+[ext_resource type="Texture2D" uid="uid://fihnbsxb26w4" path="res://Assets/Miscellaneous/Miscellaneous - Clock.png" id="1_mifb0"]
+[ext_resource type="Script" uid="uid://bbduxv5jwpsf7" path="res://Scenes/UI/clock.gd" id="2_4wx4h"]
+[ext_resource type="FontFile" uid="uid://db4js522ul5tw" path="res://Fonts/clock_font.tres" id="3_tdhdu"]
+[ext_resource type="FontFile" uid="uid://dseipxqxpdww8" path="res://Fonts/clock_font_shadow.tres" id="4_gqnqq"]
+[ext_resource type="FontFile" uid="uid://ci6p2l5fr54ii" path="res://Fonts/clock_font_shadow_2.tres" id="5_kvmnw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4wx4h"]
+atlas = ExtResource("1_mifb0")
+region = Rect2(0, 0, 71, 59)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mifb0"]
+atlas = ExtResource("1_mifb0")
+region = Rect2(80, 0, 12, 8)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_mifb0"]
+load_path = "res://.godot/imported/Miscellaneous - Clock.png-4a9a3d14134a6ea93b1525d9f8a75f0a.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tdhdu"]
+atlas = SubResource("CompressedTexture2D_mifb0")
+region = Rect2(119, 9, 12, 8)
+
+[node name="Clock" type="TextureRect"]
+texture_filter = 1
+offset_right = 71.0
+offset_bottom = 59.0
+texture = SubResource("AtlasTexture_4wx4h")
+stretch_mode = 2
+script = ExtResource("2_4wx4h")
+
+[node name="Date" type="Label" parent="."]
+z_index = 3
+z_as_relative = false
+layout_mode = 0
+offset_left = 28.319601
+offset_top = 5.0762777
+offset_right = 67.90236
+offset_bottom = 9.201278
+theme_override_colors/font_color = Color(0.13333334, 0.06666667, 0.13333334, 1)
+theme_override_fonts/font = ExtResource("3_tdhdu")
+theme_override_font_sizes/font_size = 11
+text = "Mon. 1"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="DateShadow1" type="Label" parent="Date"]
+z_index = 2
+z_as_relative = false
+layout_mode = 0
+offset_right = 39.02899
+offset_bottom = 4.125
+theme_override_colors/font_color = Color(0.8745098, 0.5921569, 0.32941177, 1)
+theme_override_fonts/font = ExtResource("4_gqnqq")
+theme_override_font_sizes/font_size = 11
+text = "Mon. 1"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="DateShadow2" type="Label" parent="Date"]
+z_index = 1
+z_as_relative = false
+layout_mode = 0
+offset_right = 40.044243
+offset_bottom = 4.125
+theme_override_colors/font_color = Color(0.8745098, 0.5921569, 0.32941177, 1)
+theme_override_fonts/font = ExtResource("5_kvmnw")
+theme_override_font_sizes/font_size = 11
+text = "Mon. 1"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Season" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 29.0
+offset_top = 16.0
+offset_right = 41.0
+offset_bottom = 24.0
+texture = SubResource("AtlasTexture_mifb0")
+stretch_mode = 2
+
+[node name="Weather" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 53.0
+offset_top = 16.0
+offset_right = 65.0
+offset_bottom = 24.0
+texture = SubResource("AtlasTexture_tdhdu")
+stretch_mode = 2
+
+[node name="Time" type="Label" parent="."]
+z_index = 3
+z_as_relative = false
+texture_filter = 1
+layout_mode = 0
+offset_left = 27.980478
+offset_top = 27.24125
+offset_right = 67.94401
+offset_bottom = 31.36625
+theme_override_colors/font_color = Color(0.13333334, 0.06666667, 0.13333334, 1)
+theme_override_fonts/font = ExtResource("3_tdhdu")
+theme_override_font_sizes/font_size = 11
+text = "06:00 am"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TimeShadow1" type="Label" parent="Time"]
+z_index = 2
+z_as_relative = false
+texture_filter = 1
+layout_mode = 0
+offset_left = 0.37823296
+offset_top = -0.31331062
+offset_right = 38.885544
+offset_bottom = 3.8116894
+theme_override_colors/font_color = Color(0.8745098, 0.5921569, 0.32941177, 1)
+theme_override_fonts/font = ExtResource("4_gqnqq")
+theme_override_font_sizes/font_size = 11
+text = "06:00 am"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="TimeShadow2" type="Label" parent="Time"]
+z_index = 1
+z_as_relative = false
+texture_filter = 1
+layout_mode = 0
+offset_left = 0.18911743
+offset_top = -0.25027275
+offset_right = 39.52855
+offset_bottom = 3.8747272
+theme_override_colors/font_color = Color(0.8745098, 0.5921569, 0.32941177, 1)
+theme_override_fonts/font = ExtResource("5_kvmnw")
+theme_override_font_sizes/font_size = 11
+text = "06:00 am"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.001
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

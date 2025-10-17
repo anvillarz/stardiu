@@ -1,0 +1,85 @@
+[gd_scene load_steps=13 format=3 uid="uid://bx811a21ae33u"]
+
+[ext_resource type="Texture2D" uid="uid://cuee6m2srro85" path="res://Assets/Miscellaneous/Miscellaneous - Animations.png" id="1_ewy6q"]
+[ext_resource type="Script" uid="uid://c6cqvwq8ljt0n" path="res://Scripts/dirt_animation.gd" id="2_82ovh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kldst"]
+atlas = ExtResource("1_ewy6q")
+region = Rect2(0, 192, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b2bpf"]
+atlas = ExtResource("1_ewy6q")
+region = Rect2(16, 192, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7lihs"]
+atlas = ExtResource("1_ewy6q")
+region = Rect2(32, 192, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fgofq"]
+atlas = ExtResource("1_ewy6q")
+region = Rect2(48, 192, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2irst"]
+atlas = ExtResource("1_ewy6q")
+region = Rect2(64, 192, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bf53h"]
+atlas = ExtResource("1_ewy6q")
+region = Rect2(80, 192, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_71axn"]
+atlas = ExtResource("1_ewy6q")
+region = Rect2(96, 192, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dahhg"]
+atlas = ExtResource("1_ewy6q")
+region = Rect2(112, 192, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3so38"]
+atlas = ExtResource("1_ewy6q")
+region = Rect2(128, 192, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3cx6b"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kldst")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b2bpf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7lihs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fgofq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2irst")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bf53h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_71axn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dahhg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3so38")
+}],
+"loop": false,
+"name": &"hoed",
+"speed": 20.0
+}]
+
+[node name="DirtAnimation" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_3cx6b")
+animation = &"hoed"
+frame = 8
+frame_progress = 1.0
+offset = Vector2(8, 8)
+script = ExtResource("2_82ovh")
+
+[connection signal="animation_finished" from="." to="." method="_on_animation_finished"]

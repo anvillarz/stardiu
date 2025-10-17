@@ -1,0 +1,74 @@
+[gd_scene load_steps=11 format=3 uid="uid://cp1dju6mb7x1x"]
+
+[ext_resource type="Theme" uid="uid://r3lmwrk87yog" path="res://Scenes/UI/game_ui_theme.tres" id="1_wirqv"]
+[ext_resource type="Script" uid="uid://c7hx3dbov4ypv" path="res://Scenes/UI/tools_panel.gd" id="2_ifyb1"]
+[ext_resource type="Texture2D" uid="uid://bc4214jwl6713" path="res://Assets/Miscellaneous/Miscellaneous - Tools.png" id="2_mt8su"]
+[ext_resource type="Texture2D" uid="uid://cou6gn62kisga" path="res://Assets/Miscellaneous/Miscellaneous - Harvested Crops, Seed Packets, Minerals, Food, Equipment, & Miscellaneous Objects.png" id="3_ifyb1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ugsg"]
+atlas = ExtResource("2_mt8su")
+region = Rect2(80, 33, 17, 15)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_57gy1"]
+load_path = "res://.godot/imported/Miscellaneous - Tools.png-52d6b4eaed8690d6f8d52641b0929068.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xyh0u"]
+atlas = SubResource("CompressedTexture2D_57gy1")
+region = Rect2(31, 227, 18, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v6v1u"]
+atlas = ExtResource("3_ifyb1")
+region = Rect2(256, 303, 16, 18)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_mt8su"]
+load_path = "res://.godot/imported/Miscellaneous - Harvested Crops, Seed Packets, Minerals, Food, Equipment, & Miscellaneous Objects.png-9210f40f83827bb487f9dbc5495247be.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ifyb1"]
+atlas = SubResource("CompressedTexture2D_mt8su")
+region = Rect2(306, 304, 12, 16)
+
+[node name="ToolsPanel" type="PanelContainer"]
+offset_right = 22.0
+offset_bottom = 22.0
+theme = ExtResource("1_wirqv")
+theme_type_variation = &"WoodPanel"
+script = ExtResource("2_ifyb1")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="ToolHoe" type="Button" parent="HBoxContainer"]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+theme_type_variation = &"ToolButton"
+icon = SubResource("AtlasTexture_8ugsg")
+icon_alignment = 1
+
+[node name="ToolWaterCan" type="Button" parent="HBoxContainer"]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+theme_type_variation = &"ToolButton"
+icon = SubResource("AtlasTexture_xyh0u")
+icon_alignment = 1
+
+[node name="SeedParsnip" type="Button" parent="HBoxContainer"]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+theme_type_variation = &"ToolButton"
+icon = SubResource("AtlasTexture_v6v1u")
+icon_alignment = 1
+
+[node name="SeedPotato" type="Button" parent="HBoxContainer"]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+theme_type_variation = &"ToolButton"
+icon = SubResource("AtlasTexture_ifyb1")
+icon_alignment = 1
+
+[connection signal="pressed" from="HBoxContainer/ToolHoe" to="." method="_on_tool_hoe_pressed"]
+[connection signal="pressed" from="HBoxContainer/ToolWaterCan" to="." method="_on_tool_water_can_pressed"]
+[connection signal="pressed" from="HBoxContainer/SeedParsnip" to="." method="_on_seed_pressed"]
+[connection signal="pressed" from="HBoxContainer/SeedParsnip" to="." method="_on_seed_parsnip_pressed"]
+[connection signal="pressed" from="HBoxContainer/SeedPotato" to="." method="_on_seed_potato_pressed"]
+[connection signal="pressed" from="HBoxContainer/SeedPotato" to="." method="_on_seed_pressed"]

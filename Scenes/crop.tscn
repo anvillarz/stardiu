@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://bx46kn8a21en8"]
+
+[ext_resource type="Texture2D" uid="uid://djcu6baky1w00" path="res://Assets/Environment/Environment - Crops.png" id="1_djpt6"]
+[ext_resource type="Script" uid="uid://ddmsomgms4pt0" path="res://Scripts/crop.gd" id="2_rqw3c"]
+
+[node name="Crop" type="Sprite2D" groups=["crops"]]
+texture = ExtResource("1_djpt6")
+offset = Vector2(8, 0)
+hframes = 16
+vframes = 26
+frame = 73
+script = ExtResource("2_rqw3c")
