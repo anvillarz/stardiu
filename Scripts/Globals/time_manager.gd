@@ -5,7 +5,7 @@ var minutes = 0
 var ampm = "am"
 var current_time: String
 var current_day = 0
-var current_number_day = 1
+var current_number_day = 20
 var current_date: String
 var current_season = 0
 
@@ -34,7 +34,6 @@ func update_time():
 
 
 func next_day():
-	new_day.emit()
 	hours = 6
 	minutes = 0
 	current_day += 1
@@ -46,6 +45,8 @@ func next_day():
 	if current_number_day > 28:
 		current_number_day = 1
 		next_season()
+	
+	new_day.emit()
 
 
 func next_season():

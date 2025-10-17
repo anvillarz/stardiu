@@ -22,8 +22,6 @@ var current_tool = DataTypes.Tools.NONE
 var current_crop = DataTypes.Crops.NONE
 var actual_terrain = DataTypes.SeasonsTerrain.NORMAL
 
-#var day = 1
-
 signal day_changed(watered_crops)
 
 func _ready() -> void:
@@ -87,7 +85,7 @@ func place_crop(crop, pos):
 	var new_crop = CROP.instantiate()
 	var fix_position = Vector2(pos.x * 16, pos.y * 16)
 	new_crop.position = fix_position
-	new_crop.crop = crop
+	new_crop.selected_crop = crop
 	new_crop.z_index = pos.y
 	add_child(new_crop)
 
@@ -131,15 +129,5 @@ func change_season(season):
 	watered_dirt_layer.set_cells_terrain_connect(watered_cells, 0, actual_terrain)
 	
 	actual_season = season
-	check_seasonal_crops()
 	
 	print("Season: " + DataTypes.seasons_text[season])
-
-
-func check_seasonal_crops():
-	var crops = get_tree().get_nodes_in_group("crops")
-	for crop in crops:
-		if crop.withered:
-			continue
-		if crop.season != actual_season:
-			get_tree().call_group("crops", "wilt_crop")
