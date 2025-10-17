@@ -28,12 +28,6 @@ var dead_crop_sprite_frames = [204, 205, 206, 207]
 var crop_list : Dictionary
 
 
-#func get_crop_list():
-	#for i in crops_info.size():
-		#crop_list[crops_info[i].name] = i
-	#return crop_list
-
-
 func get_stage(crop, day):
 	return crops_info[crop].stages_sequence[day]
 
@@ -43,4 +37,3 @@ func get_random_dead_crop():
 	
 	var random_dead_crop = rng.randi_range(0, 3)
 	return dead_crop_sprite_frames[random_dead_crop]
-	

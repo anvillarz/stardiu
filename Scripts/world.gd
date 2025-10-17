@@ -4,11 +4,9 @@ extends Node2D
 @onready var dirt_layer: TileMapLayer = $TileMapLayers/Dirt
 @onready var watered_dirt_layer: TileMapLayer = $TileMapLayers/WateredDirt
 
-
 const DIRT_ANIMATION = preload("uid://bx811a21ae33u")
 const WATERED_ANIMATION = preload("uid://ltitoh6m62kq")
 const CROP = preload("uid://bx46kn8a21en8")
-
 
 var can_hoe_data = "can_hoe"
 var can_seed_data = "can_seed"

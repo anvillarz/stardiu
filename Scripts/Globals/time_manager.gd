@@ -30,7 +30,6 @@ func update_time():
 		next_day()
 	
 	current_time = "%02d:%02d %s" %[hours, minutes, ampm]
-	
 
 
 func next_day():
