@@ -5,7 +5,7 @@ var minutes = 0
 var ampm = "am"
 var current_time: String
 var current_day = 0
-var current_number_day = 20
+var current_number_day = 1
 var current_date: String
 var current_season = 0
 
