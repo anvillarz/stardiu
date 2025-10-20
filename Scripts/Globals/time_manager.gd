@@ -12,6 +12,7 @@ var current_season = 0
 signal new_day
 signal new_season
 
+
 func update_time():
 	if minutes < 50:
 		minutes += 10

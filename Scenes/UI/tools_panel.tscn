@@ -68,7 +68,7 @@ icon_alignment = 1
 
 [connection signal="pressed" from="HBoxContainer/ToolHoe" to="." method="_on_tool_hoe_pressed"]
 [connection signal="pressed" from="HBoxContainer/ToolWaterCan" to="." method="_on_tool_water_can_pressed"]
-[connection signal="pressed" from="HBoxContainer/SeedParsnip" to="." method="_on_seed_pressed"]
 [connection signal="pressed" from="HBoxContainer/SeedParsnip" to="." method="_on_seed_parsnip_pressed"]
+[connection signal="pressed" from="HBoxContainer/SeedParsnip" to="." method="_on_seed_pressed"]
 [connection signal="pressed" from="HBoxContainer/SeedPotato" to="." method="_on_seed_potato_pressed"]
 [connection signal="pressed" from="HBoxContainer/SeedPotato" to="." method="_on_seed_pressed"]
