@@ -29,6 +29,10 @@ func _ready() -> void:
 	TimeManager.connect("new_season", change_season)
 
 
+func crop_deleted(crop_position):
+	print("Eliminado:" + str(crop_position.x / 16) + ", " + str(crop_position.y / 16))
+
+
 func new_day():
 	day_changed.emit(watered_tiles)
 
@@ -81,6 +85,7 @@ func _input(_event: InputEvent) -> void:
 
 func place_crop(crop, pos):
 	var new_crop = CROP.instantiate()
+	new_crop.connect("crop_deleted", crop_deleted)
 	var fix_position = Vector2(pos.x * 16, pos.y * 16)
 	new_crop.position = fix_position
 	new_crop.selected_crop = crop

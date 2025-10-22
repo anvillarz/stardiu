@@ -9,6 +9,8 @@ var growth_days
 var crop_name
 var season
 
+signal crop_deleted(crop_position)
+
 func _ready() -> void:
 	get_parent().connect("day_changed", on_day_changed)
 	
@@ -53,3 +55,11 @@ func check_watered(watered_tiles):
 func wilt_crop():
 	frame = CropsData.get_random_dead_crop()
 	withered = true
+
+
+func _on_area_2d_input_event() -> void:
+	if Input.is_action_pressed("click"):
+		if harvest_ready:
+			print(crop_name + " has been harvested")
+			crop_deleted.emit(position)
+			queue_free()
