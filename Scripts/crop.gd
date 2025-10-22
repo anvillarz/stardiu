@@ -57,7 +57,7 @@ func wilt_crop():
 	withered = true
 
 
-func _on_area_2d_input_event() -> void:
+func _on_area_2d_input_event(_viewport: Node, _event: InputEvent, _shape_idx: int) -> void:
 	if Input.is_action_pressed("click"):
 		if harvest_ready:
 			print(crop_name + " has been harvested")
